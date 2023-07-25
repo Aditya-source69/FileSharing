@@ -10,3 +10,4 @@
 * `Boto3` Used to connecto to S3 buckets and Lambda functions
 * `AWS Lambda` Calls SNS
 * `SNS` Sends email to webpage owner when new account is created
+* `MySQL` Store user data
