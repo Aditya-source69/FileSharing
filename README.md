@@ -2,7 +2,7 @@
 
 (in progress, due Aug 8th)
 
-#Architechture
+# Architechture
 <img width="1250" alt="project architechture" src="https://github.com/mfkimbell/cloud-file-upload/assets/107063397/873a2ac6-b527-4849-b7d4-8f3ad029b8ad">
 
 
