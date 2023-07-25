@@ -2,7 +2,7 @@
 
 (in progress, due Aug 8th)
 
-  <img width="1250" alt="Screenshot 2023-07-24 at 4 11 27 PM" src="https://github.com/mfkimbell/cloud-file-upload/assets/107063397/9d4535c3-7e85-4196-9443-ffc95d0b4959">
+<img width="1250" alt="Project Architecture" src="https://github.com/mfkimbell/cloud-file-upload/assets/107063397/39024bec-f049-4d3c-bf70-5f35496be306">
 
 
 **Tools Used:**
