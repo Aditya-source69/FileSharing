@@ -2,7 +2,7 @@
 
 (in progress, due Aug 8th)
 
-<img width="1250" alt="Project Architecture" src="https://github.com/mfkimbell/cloud-file-upload/assets/107063397/39024bec-f049-4d3c-bf70-5f35496be306">
+<img width="1250" alt="project architechture" src="https://github.com/mfkimbell/cloud-file-upload/assets/107063397/44c25313-661e-4c8c-b0a3-691fb950c168">
 
 
 **Tools Used:**
