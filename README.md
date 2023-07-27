@@ -13,3 +13,6 @@
 * `AWS Lambda` Calls SNS
 * `SNS` Sends email to webpage owner when new account is created
 * `MySQL` Store user data
+* `RDS`
+* `EC2`
+* `IAM`
