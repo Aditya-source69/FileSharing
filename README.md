@@ -1,6 +1,6 @@
 # cloud-file-upload
 
-(in progress, due Aug 8th)
+In this application, a user can create an account and upload a profile picture. This will save their information on RDS in a MySQL database, it will then send an email to my personal email telling me a user has created an account. A user can enter their credentials and allow them to login to the main webapp. A user can then select up to 5 emails to upload a file to. Each address will recieve an email with a link that allows them to download the uploaded file from S3.
 
 # Architechture
 
