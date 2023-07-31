@@ -1,0 +1,53 @@
+<DOCTYPE! html>
+<html lang="en">
+<head>
+  <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{{ url_for('static',filename='styles/main.css') }}"
+      />
+  <meta charset="utf-8">
+  <title>Basic html layout example</title>
+</head>
+<body class="hello">
+
+
+  <div class="main">
+    <form
+      class="ui form"
+      action="/upload"
+      method="get"
+      enctype="multipart/form-data"
+    >
+      <div class="drop-container2">
+        <div class="style">
+        <h2 >
+          <b>File Share Login</b>
+        </h2>
+        <div class="email">
+          <div>
+            <label > <img style="max-width: 1.5em" src="{{ url_for('static',filename='images/email.png') }}"></img>   </label>
+            <input type="text" name="email" placeholder="email" /><br />
+          </div>
+          <div>
+            <label><img style="max-width: 1.5em" src="{{ url_for('static',filename='images/pass.png') }}"></img></label>
+            <input type="text" name="password" placeholder="password" /><br />
+          </div>
+         
+        </div>
+
+        
+        <button class="btn btn-primary send" type="submit">Login</button>
+      </div>
+    </form>
+    <p> New to File Share? <a href="/register"> Create an Account</a></p>
+  </div>
+
+</body>
+</html>
