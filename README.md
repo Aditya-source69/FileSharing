@@ -17,7 +17,7 @@ In this application, a user can create an account and upload a profile picture. 
 * `SES` Sends file download link to specified emails
 * `MySQL/RDS` Store user credentials and profile pictures
 * `EC2` Host Flask WebServer/application
-* `IAM` Allows for increased user permissions.
+* `IAM` Set access and identity permissions
 ---
 
 1. Main page login
