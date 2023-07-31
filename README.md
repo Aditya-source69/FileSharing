@@ -15,7 +15,7 @@ In this application, a user can create an account and upload a profile picture. 
 * `AWS Lambda` Calls SNS and SES functions
 * `SNS` Sends email to webpage owner when new account is created
 * `SES` Sends file download link to specified emails
-* `MySQL/RDS` Store user credentials and profile pictures
+* `MySQL/RDS` Store user credentials, profile pictures, and file uploads
 * `EC2` Host Flask WebServer/application
 * `IAM` Set access and identity permissions
 ---
