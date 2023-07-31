@@ -10,9 +10,8 @@
 # Tools Used:
 * `Flask` Webserver UI
 * `Boto3` Used to connecto to S3 buckets and Lambda functions
-* `AWS Lambda` Calls SNS
+* `AWS Lambda` Calls SNS and SES functions
 * `SNS` Sends email to webpage owner when new account is created
-* `MySQL` Store user data
-* `RDS`
+* `MySQL/RDS` Store user credentials and profile pictures
 * `EC2`
-* `IAM`
+* `IAM` Allows for increased user permissions. 
