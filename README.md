@@ -23,9 +23,11 @@ In this application, a user can create an account and upload a profile picture. 
 1. Main page login
 2. Create account page
 3. File upload app page
-  
-<img width="609" alt="display" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/8e7f842d-ccf6-40e0-8630-86029c8685c5">
+
+<img width="607" alt="display" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/55885c0d-49e2-484a-a4b9-a19b043f3d1d">
+
 
 ---
 This is what the email notification will look like
-<img width="696" alt="email" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/7c966f32-f48f-4d97-b2c6-f4b56360c8f0">
+  
+<img width="669" alt="email" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/b6fa9a79-4367-48f8-a0e2-98c87c25e8e8">
