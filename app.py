@@ -7,8 +7,8 @@ from werkzeug.datastructures import FileStorage
 import os
 
 
-ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-SECRET_KEY = "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"
+ACCESS_KEY = "ACCESS_KEY"
+SECRET_KEY = "SECRET_KEY"
 
 
 ENDPOINT = "appdb.ct3zejlpfiwm.us-east-1.rds.amazonaws.com"
@@ -54,10 +54,10 @@ def add():
 
     client = boto3.client(
         "s3",
-        aws_access_key_id="AKIA3SR6ZX6FT4OAXVPJ",
-        aws_secret_access_key="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",
+        aws_access_key_id="aws_access_key_id",
+        aws_secret_access_key=" aws_secret_access_key",
         # THIS MIGHT BE NEEDED
-        # aws_session_token="FwoGZXIvYXdzELX//////////wEaDPWvF69TancW7W8QECK8AfVQ2bketm8GGXxu/jQj8xN5igYCtViBqbo1vgEnZgnsW3xX6WJkShy30InHduHjECJcx3OC/9+PBSOSUKIT9xJvL3v5LdH6IwNtEOf0+tt+naZk40zDF/ZoersHU4UOCer+eYcVS27haByKQY0JJtiiGlxXcazVcyykoqNTORxtHgExkRlJ58vwcuLXBTmBOdFWyKN8QFke+tmnebdfs0rOVZwc9fCvsNseS0k6h2tEhHBSUJH19pXnJkd1KJuTyqUGMi175Qaybc9XNONF479KVknYfWkWr7gH3yY37A00jTOb+UCeJ5jbI2LWNS5FkGg=",
+
     )
 
     client.upload_file(
@@ -128,8 +128,8 @@ def uploadSend():
 
     client = boto3.client(
         "s3",
-        aws_access_key_id="AKIA3SR6ZX6FT4OAXVPJ",
-        aws_secret_access_key="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",
+        aws_access_key_id="aws_access_key_id",
+        aws_secret_access_key="aws_secret_access_key",
     )
 
     client.upload_file(
