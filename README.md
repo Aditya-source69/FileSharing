@@ -25,12 +25,15 @@ In this application, a user can create an account and upload a profile picture. 
 3. File upload app page
 
 <img width="607" alt="display" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/55885c0d-49e2-484a-a4b9-a19b043f3d1d">
+
 ---
+
 This is the notification for new users:
 <img width="1012" alt="Screenshot 2023-09-29 at 1 00 21 PM" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/ee5b7ae7-5e43-42aa-8ea6-68ad90b97463">
 
 
 ---
+
 This is what is recieved when someone shares a file:
   
 <img width="669" alt="email" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/b6fa9a79-4367-48f8-a0e2-98c87c25e8e8">
