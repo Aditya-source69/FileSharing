@@ -20,6 +20,7 @@ In this application, a user can create an account and upload a profile picture. 
 * `IAM` Set access and identity permissions that we use when connecting with Boto3
 ---
 When people access the application, they can only add files if they've added credentials to the MySQL database in AWS RDS. Anyone can connect, as by default, the "/add" route has permissions built into it to add a username and password to S3, my email is alerted after the function is invoked.
+
 ##lambda function: lambdaSNS
 
 ``` python
@@ -42,9 +43,58 @@ Message="New user Added: " + email,
 Subject="New User",
 )
 ```
+---
 
+After that, they can use the "/login" route, which allows the user to input data and call the "/uploadSend" endpoint. This stores data in s3, keeps track of the file name in the MySQL database, and invokes my lambda function "lambdaSendFileLink" which sends an email to the entered emails that contains a link. 
 
-that a user has been created in the database. After that, they can use the "/login" route, which allows the user to input data and call the "/uploadSend" endpoint. This stores data in s3, keeps track of the file name in the MySQL database, and invokes my lambda function "mylambdatest" which sends an email to the entered emails that contains a link. 
+##lambda function: lambdaSendFileLink
+
+``` python
+import boto3
+import json
+ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
+SECRET_KEY = "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"
+AWS_REGION = "us-east-1"
+def lambda_handler(event, context):
+ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
+SECRET_KEY = "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"
+AWS_REGION = "us-east-1"
+emails = event.get("email")
+botoS3 = boto3.client(
+"s3",
+region_name=AWS_REGION,
+aws_access_key_id=ACCESS_KEY,
+aws_secret_access_key=SECRET_KEY,
+)
+botoSES = boto3.client("ses", region_name="us-east-1")
+key = event.get("filename")
+bucket = "mkcloudbucket"
+url = f"https://{bucket}.s3.amazonaws.com/{key}"
+response = botoSES.send_email(
+Destination={"ToAddresses": emails},
+Message={
+"Body": {
+"Text": {
+"Charset": "UTF-8",
+"Data": "Your file is ready to download: " + url,
+}
+},
+"Subject": {
+"Charset": "UTF-8",
+"Data": "Test email",
+},
+},
+Source="mkimbell@uab.edu",
+)
+print(response)
+return {
+"statusCode": 200,
+"body": json.dumps(
+"Email Sent Successfully. MessageId is: " + response["MessageId"]
+),
+}
+```
+
 ---
 
 1. Main page login
