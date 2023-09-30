@@ -156,7 +156,7 @@ def uploadSend():
 
     lambda_payload = {"email": emails, "filename": filename}
     lambda_client.invoke(
-        FunctionName="mylambdatest",
+        FunctionName="lambdaSendFileLink",
         InvocationType="Event",
         Payload=json.dumps(lambda_payload),
     )
