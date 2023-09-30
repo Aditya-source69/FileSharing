@@ -14,7 +14,7 @@ SECRET_KEY = "SECRET_KEY"
 ENDPOINT = "appdb.ct3zejlpfiwm.us-east-1.rds.amazonaws.com"
 PORT = "3306"
 USR = "admin"  # ??????
-PASSWORD = "password1"
+PASSWORD = "*********"
 DBNAME = "appdb"  # ??????
 
 

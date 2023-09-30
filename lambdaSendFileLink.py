@@ -2,13 +2,13 @@ import boto3
 import json
 
 ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-SECRET_KEY = "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"
+SECRET_KEY = "*******************"
 AWS_REGION = "us-east-1"
 
 
 def lambda_handler(event, context):
     ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-    SECRET_KEY = "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"
+    SECRET_KEY = "*******************"
     AWS_REGION = "us-east-1"
     emails = event.get("email")
     botoS3 = boto3.client(
