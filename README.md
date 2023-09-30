@@ -27,7 +27,7 @@ When people access the application, they can only add files if they've added cre
 import boto3
 def lambda_handler(event, context):
 ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-SECRET_KEY = "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"
+SECRET_KEY = "*******************"
 AWS_REGION = "us-east-1"
 email = event.get("email")
 sns_client = boto3.client(
@@ -53,7 +53,7 @@ After that, they can use the "/login" route, which allows the user to input data
 import boto3
 import json
 ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-SECRET_KEY = "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"
+SECRET_KEY = "********************"
 AWS_REGION = "us-east-1"
 def lambda_handler(event, context):
 ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
