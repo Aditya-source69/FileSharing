@@ -9,8 +9,8 @@ In this application, a user can create an account and upload a profile picture. 
 ---
 
 # Tools Used:
-* `Flask` Webserver UI
-* `Boto3` Used to connecto to S3 buckets and Lambda functions
+* `Flask` Used to operate the webserver
+* `Boto3` Python SDK used to connecto to S3 buckets and Lambda functions (can do other aws services)
 * `S3` Store profile pictures and uploaded files
 * `AWS Lambda` Calls SNS and SES functions
 * `SNS` Sends email to webpage owner when new account is created
