@@ -21,7 +21,7 @@ In this application, a user can create an account and upload a profile picture. 
 ---
 When people access the application, they can only add files if they've added credentials to the MySQL database in AWS RDS. Anyone can connect, as by default, the "/add" route has permissions built into it to add a username and password to S3, my email is alerted after the function is invoked.
 
-##lambda function: lambdaSNS
+### lambda function: lambdaSNS
 
 ``` python
 import boto3
@@ -47,7 +47,7 @@ Subject="New User",
 
 After that, they can use the "/login" route, which allows the user to input data and call the "/uploadSend" endpoint. This stores data in s3, keeps track of the file name in the MySQL database, and invokes my lambda function "lambdaSendFileLink" which sends an email to the entered emails that contains a link. 
 
-##lambda function: lambdaSendFileLink
+### lambda function: lambdaSendFileLink
 
 ``` python
 import boto3
