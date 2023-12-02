@@ -1,6 +1,7 @@
 # cloud-file-upload
 
-<img width="1006" alt="cloud file workflow" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/f3404dd7-d770-4815-949b-001c95d5a318">
+<img width="1006" alt="cloud file workflow" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/24d39502-8fbc-4e58-b2b4-5bb51a40998c">
+
 
 
 In this application, a user can
