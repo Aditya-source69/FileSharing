@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: file-sharing-service
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: DB_ENDPOINT
+        sync: false
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        value: admin
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: appdb 
