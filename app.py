@@ -6,16 +6,16 @@ from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
 import os
 
+# Use environment variables for sensitive data
+ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
+SECRET_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-ACCESS_KEY = "ACCESS_KEY"
-SECRET_KEY = "SECRET_KEY"
-
-#EC2 server
-ENDPOINT = "appdb.ct3zejlpfiwm.us-east-1.rds.amazonaws.com"
-PORT = "3306"
-USR = "admin"  # ??????
-PASSWORD = "*********"
-DBNAME = "appdb"  # ??????
+#Database configuration
+ENDPOINT = os.environ.get('DB_ENDPOINT')
+PORT = os.environ.get('DB_PORT', '3306')
+USR = os.environ.get('DB_USER', 'admin')
+PASSWORD = os.environ.get('DB_PASSWORD')
+DBNAME = os.environ.get('DB_NAME', 'appdb')
 
 
 app = Flask(__name__, static_folder="staticFiles")
@@ -54,10 +54,9 @@ def add():
 
     client = boto3.client(
         "s3",
-        aws_access_key_id="aws_access_key_id",
-        aws_secret_access_key=" aws_secret_access_key",
-        # THIS MIGHT BE NEEDED
-
+        aws_access_key_id=ACCESS_KEY,
+        aws_secret_access_key=SECRET_KEY,
+        region_name="us-east-1"
     )
 
     client.upload_file(
@@ -128,8 +127,9 @@ def uploadSend():
 
     client = boto3.client(
         "s3",
-        aws_access_key_id="aws_access_key_id",
-        aws_secret_access_key="aws_secret_access_key",
+        aws_access_key_id=ACCESS_KEY,
+        aws_secret_access_key=SECRET_KEY,
+        region_name="us-east-1"
     )
 
     client.upload_file(

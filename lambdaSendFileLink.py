@@ -1,8 +1,8 @@
 import boto3
 import json
 
-ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-SECRET_KEY = "*******************"
+ACCESS_KEY = "your-actual-access-key"
+SECRET_KEY = "your-actual-secret-key"
 AWS_REGION = "us-east-1"
 
 
