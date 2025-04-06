@@ -1,25 +1,22 @@
 import boto3
 import json
+import os
 
-ACCESS_KEY = "your-actual-access-key"
-SECRET_KEY = "your-actual-secret-key"
+# Use environment variables for AWS credentials
+AWS_ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_REGION = "us-east-1"
 
-
 def lambda_handler(event, context):
-    ACCESS_KEY = "AKIA3SR6ZX6FT4OAXVPJ"
-    SECRET_KEY = "*******************"
-    AWS_REGION = "us-east-1"
     emails = event.get("email")
     botoS3 = boto3.client(
         "s3",
         region_name=AWS_REGION,
-        aws_access_key_id=ACCESS_KEY,
-        aws_secret_access_key=SECRET_KEY,
+        aws_access_key_id=AWS_ACCESS_KEY,
+        aws_secret_access_key=AWS_SECRET_KEY,
     )
-    botoSES = boto3.client("ses", region_name="us-east-1")
+    botoSES = boto3.client("ses", region_name=AWS_REGION)
     key = event.get("filename")
-
     bucket = "mkcloudbucket"
     url = f"https://{bucket}.s3.amazonaws.com/{key}"
 
@@ -34,13 +31,11 @@ def lambda_handler(event, context):
             },
             "Subject": {
                 "Charset": "UTF-8",
-                "Data": "Test email",
+                "Data": "File Sharing Notification",
             },
         },
-        Source="mkimbell@uab.edu",
+        Source="your-verified-ses-email@example.com",  # Replace with your verified SES email
     )
-
-    print(response)
 
     return {
         "statusCode": 200,

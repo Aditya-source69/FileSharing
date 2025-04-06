@@ -1,3 +1,63 @@
+# Cloud File Sharing Service
+
+A secure file sharing service built with Flask and AWS services.
+
+## Features
+- User account creation with profile pictures
+- File upload and sharing
+- Email notifications for new users and file sharing
+- Secure file storage using AWS S3
+- Database storage using AWS RDS
+
+## Setup Instructions
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Set up environment variables:
+```bash
+# AWS Credentials
+export AWS_ACCESS_KEY_ID=your_access_key
+export AWS_SECRET_ACCESS_KEY=your_secret_key
+
+# Database Configuration
+export DB_ENDPOINT=your_rds_endpoint
+export DB_PORT=3306
+export DB_USER=admin
+export DB_PASSWORD=your_database_password
+export DB_NAME=appdb
+```
+
+4. Initialize the database:
+```bash
+python app.py
+```
+Then visit: `http://localhost:5000/initialize`
+
+## Deployment on Render.com
+
+1. Fork this repository
+2. Create a new Web Service on Render
+3. Connect your GitHub repository
+4. Add the required environment variables in Render dashboard
+5. Deploy!
+
+## AWS Services Used
+- S3 for file storage
+- RDS for database
+- Lambda for serverless functions
+- SNS for notifications
+- SES for email sending
+
+## Security Notes
+- Never commit AWS credentials to version control
+- Use environment variables for sensitive data
+- Keep your AWS credentials secure
+- Configure proper IAM roles and permissions
+
 # cloud-file-upload
 
 <img width="1006" alt="cloud file workflow" src="https://github.com/mfkimbell/cloud-file-sharing-service/assets/107063397/24d39502-8fbc-4e58-b2b4-5bb51a40998c">
