@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import pymysql
 import boto3
 import json
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
 import os
+from datetime import datetime
 
 # Use environment variables for sensitive data
 ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -17,9 +18,19 @@ USR = os.environ.get('DB_USER', 'admin')
 PASSWORD = os.environ.get('DB_PASSWORD')
 DBNAME = os.environ.get('DB_NAME', 'appdb')
 
+# Configure upload folder
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx'}
 
 app = Flask(__name__, static_folder="staticFiles")
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
+# Create uploads directory if it doesn't exist
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route("/")
 def main():
@@ -33,7 +44,7 @@ def notfound():
 
 @app.route("/login")
 def login():
-    render_template("login")
+    return render_template("login.html")
 
 
 @app.route("/register")
@@ -164,9 +175,28 @@ def uploadSend():
     return render_template("/upload.html")
 
 
-@app.route("/upload", methods=["GET"])
+@app.route("/upload", methods=["GET", "POST"])
 def upload():
-    return render_template("/upload.html")
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return 'No file part', 400
+        file = request.files['file']
+        if file.filename == '':
+            return 'No selected file', 400
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            # Add timestamp to filename to make it unique
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_')
+            unique_filename = timestamp + filename
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], unique_filename))
+            file_url = request.host_url + 'uploads/' + unique_filename
+            return render_template('success.html', file_url=file_url)
+    return render_template('upload.html')
+
+
+@app.route("/uploads/<filename>")
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 @app.route("/search", methods=["POST"])

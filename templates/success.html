@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .success-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .success-message {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .file-link {
+            word-break: break-all;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-message">File Upload Successful!</div>
+        <p>Your file has been uploaded successfully. You can access it using the following link:</p>
+        <div class="file-link">
+            <a href="{{ file_url }}" target="_blank">{{ file_url }}</a>
+        </div>
+        <p>Share this link with anyone you want to share the file with.</p>
+        <a href="/upload" class="button">Upload Another File</a>
+    </div>
+</body>
+</html> 
